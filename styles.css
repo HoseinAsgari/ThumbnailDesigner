@@ -1,0 +1,269 @@
+h2 {
+    vertical-align: center;
+    text-align    : center;
+}
+
+html,
+body {
+    margin          : 0;
+    height          : 100%;
+    background-color: #222 !important;
+}
+
+* {
+    box-sizing: border-box;
+    color     : #dedede;
+}
+
+li a {
+    color          : #dedede;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: rgb(255, 251, 0);
+}
+
+.under-dotted {
+    text-decoration-style: dotted;
+}
+
+.top-nav {
+    display         : flex;
+    flex-direction  : row;
+    align-items     : center;
+    justify-content : space-between;
+    background-color: #00BAF0;
+    background      : linear-gradient(to left, #331a98, #353ebc);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color           : #FFF;
+    padding         : 0.5em;
+}
+
+.menu {
+    display        : flex;
+    flex-direction : row;
+    list-style-type: none;
+    margin         : 0;
+    padding        : 0;
+}
+
+.menu>li {
+    margin  : 0 1rem;
+    overflow: hidden;
+}
+
+.menu-button-container {
+    display        : none;
+    height         : 100%;
+    width          : 30px;
+    cursor         : pointer;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display         : block;
+    background-color: #fff;
+    position        : absolute;
+    height          : 4px;
+    width           : 30px;
+    transition      : transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius   : 2px;
+}
+
+.menu-button::before {
+    content   : '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content   : '';
+    margin-top: 8px;
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform : rotate(405deg);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform : rotate(-405deg);
+}
+
+@media (max-width: 1130px) {
+    .menu-button-container {
+        display: flex;
+    }
+
+    .menu {
+        position       : absolute;
+        top            : 0;
+        margin-top     : 100px;
+        left           : 0;
+        flex-direction : column;
+        width          : 100%;
+        justify-content: center;
+        align-items    : center;
+    }
+
+    #menu-toggle~.menu li {
+        height    : 0;
+        margin    : 0;
+        padding   : 0;
+        border    : 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #menu-toggle:checked~.menu li {
+        border    : 1px solid #333;
+        height    : 2.5em;
+        padding   : 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .menu>li {
+        display         : flex;
+        justify-content : center;
+        margin          : 0;
+        padding         : 0.5em 0;
+        width           : 100%;
+        color           : white;
+        background-color: #222;
+    }
+
+    .menu>li:not(:last-child) {
+        border-bottom: 1px solid #444;
+    }
+}
+
+section {
+    margin: 40px 0;
+}
+
+.section-title {
+    text-align    : center;
+    padding-bottom: 30px;
+}
+
+.contact .contact-about h3 {
+    font-size  : 25px;
+    margin     : 0 0 10px;
+    padding    : 0;
+    font-weight: 700;
+    color      : #222;
+}
+
+.contact .contact-about p {
+    font-size  : 14px;
+    line-height: 24px;
+    color      : #888;
+}
+
+.contact .social-links {
+    padding-bottom: 20px;
+}
+
+.contact .social-links a {
+    font-size    : 18px;
+    display      : inline-block;
+    background   : #fff;
+    color        : #3498db;
+    line-height  : 1;
+    padding      : 8px 0;
+    margin-right : 4px;
+    border-radius: 50%;
+    text-align   : center;
+    width        : 36px;
+    height       : 36px;
+    transition   : .3s;
+    border       : 1px solid #3498db;
+}
+
+.benefits {
+    padding-top: 0;
+}
+
+.benefits .content {
+    padding: 0;
+}
+
+.benefits .content h3 {
+    font-weight: 700;
+    font-size  : 34px;
+    color      : #222222;
+}
+
+.benefits .content p {
+    margin-bottom: 0;
+}
+
+.benefits .content .benefit-box {
+    padding: 20px 0;
+    width  : 100%;
+}
+
+.benefits .content .benefit-box i {
+    display    : block;
+    font-size  : 36px;
+    color      : #3498db;
+    float      : left;
+    line-height: 0;
+}
+
+.benefits .content .benefit-box span {
+    font-size  : 36px;
+    line-height: 30px;
+    display    : block;
+    font-weight: 700;
+    color      : #ccc;
+    margin-left: 50px;
+}
+
+.benefits .content .benefit-box p {
+    padding  : 15px 0 0 0;
+    margin   : 0 0 0 50px;
+    font-size: 14px;
+    color    : #b0b0b0;
+}
+
+.benefits .content .benefit-box a {
+    font-weight: 600;
+    display    : block;
+    margin-top : 20px;
+    color      : #484848;
+    font-size  : 15px;
+    transition : ease-in-out 0.3s;
+}
+
+.benefits .content .benefit-box a:hover {
+    color: #6f6f6f;
+}
+
+@media (max-width: 1024px) {
+    .benefits .image {
+        text-align: center;
+    }
+
+    .benefits .image img {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 667px) {
+    .benefits .image img {
+        max-width: 100%;
+    }
+}
